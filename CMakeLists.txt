@@ -356,7 +356,6 @@ endif()
 
 
 # Set up definitions and paths
-
 add_definitions(-DBOOST_BIND_NO_PLACEHOLDERS)
 add_definitions(${QT_DEFINITIONS})
 add_definitions(-DQT_USE_QSTRINGBUILDER)
@@ -370,6 +369,19 @@ include_directories(${TAGLIB_INCLUDE_DIRS})
 if(HAVE_IMOBILEDEVICE AND LIBIMOBILEDEVICE_VERSION VERSION_GREATER 1.1.1)
   set(IMOBILEDEVICE_USES_UDIDS ON)
 endif()
+
+# Use system gmock if it's available
+# We need to look for both gmock and gtest
+find_path(GMOCK_INCLUDE_DIRS gmock/gmock.h)
+find_library(GMOCK_LIBRARIES gmock)
+if(GMOCK_INCLUDE_DIRS)
+  find_path(GTEST_INCLUDE_DIRS gtest/gtest.h)
+  find_library(GTEST_LIBRARIES gtest)
+  if(GTEST_INCLUDE_DIRS)
+    set(USE_SYSTEM_GMOCK 1)
+    set(GMOCK_LIBRARIES ${GMOCK_LIBRARIES} ${GTEST_LIBRARIES})
+  endif(GTEST_INCLUDE_DIRS)
+endif(GMOCK_INCLUDE_DIRS)
 
 # Subdirectories
 add_subdirectory(src)
