@@ -386,6 +386,7 @@ endif(GMOCK_INCLUDE_DIRS)
 # Subdirectories
 add_subdirectory(src)
 add_subdirectory(dist)
+add_subdirectory(tests)
 add_subdirectory(ext/libstrawberry-common)
 add_subdirectory(ext/libstrawberry-tagreader)
 add_subdirectory(ext/strawberry-tagreader)
