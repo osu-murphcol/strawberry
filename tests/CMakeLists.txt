@@ -13,9 +13,9 @@ endif(USE_SYSTEM_GMOCK)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_BINARY_DIR}/src)
 include_directories(${CMAKE_SOURCE_DIR}/ext/strawberry-tagreader)
-include_directories(${CMAKE_SOURCE_DIR}/ext/strawberry-common)
-include_directories(${CMAKE_SOURCE_DIR}/ext/strawberry-tagreader)
-include_directories(${CMAKE_BINARY_DIR}/ext/strawberry-tagreader)
+include_directories(${CMAKE_SOURCE_DIR}/ext/libstrawberry-common)
+include_directories(${CMAKE_SOURCE_DIR}/ext/libstrawberry-tagreader)
+include_directories(${CMAKE_BINARY_DIR}/ext/libstrawberry-tagreader)
 
 include_directories(${QT_QTTEST_INCLUDE_DIR})
 
@@ -60,7 +60,7 @@ set(TESTUTILS-SOURCES
   test_utils.cpp
   testobjectdecorators.cpp
 
-  ${CMAKE_SOURCE_DIR}/ext/strawberry-tagreader/fmpsparser.cpp
+  ${CMAKE_SOURCE_DIR}/ext/libstrawberry-tagreader/fmpsparser.cpp
 )
 
 set(TESTUTILS-MOC-HEADERS
