@@ -170,6 +170,100 @@ void TestFHT::TestSpectrum()
     return;
 };
 
+void TestFHT::TestPower()
+{
+    FHT exampleFHT1(3);
+    FHT exampleFHT2(4);
+    FHT exampleFHT3(5);
+    FHT exampleFHT4(6);
+    FHT exampleFHT5(7);
+
+    int size = 8;
+    float * testArray;
+
+    testArray = new float[size];
+    for(int i = 0; i < size; i++) testArray[i] = (float)2;
+    exampleFHT1.power(testArray);
+    QCOMPARE(testArray[0], (float)(256));
+    delete [] testArray;
+    size *= 2;
+
+    testArray = new float[size];
+    for(int i = 0; i < size; i++) testArray[i] = (float)2;
+    exampleFHT2.power(testArray);
+    QCOMPARE(testArray[0], (float)(1024));
+    delete [] testArray;
+    size *= 2;
+
+    testArray = new float[size];
+    for(int i = 0; i < size; i++) testArray[i] = (float)2;
+    exampleFHT3.power(testArray);
+    QCOMPARE(testArray[0], (float)(4096));
+    delete [] testArray;
+    size *= 2;
+
+    testArray = new float[size];
+    for(int i = 0; i < size; i++) testArray[i] = (float)2;
+    exampleFHT4.power(testArray);
+    QCOMPARE(testArray[0], (float)(16384));
+    delete [] testArray;
+    size *= 2;
+
+    testArray = new float[size];
+    for(int i = 0; i < size; i++) testArray[i] = (float)2;
+    exampleFHT5.power(testArray);
+    QCOMPARE(testArray[0], (float)(65536));
+    delete [] testArray;
+    size *= 2;
+}
+
+void TestFHT::TestPower2()
+{
+FHT exampleFHT1(3);
+FHT exampleFHT2(4);
+FHT exampleFHT3(5);
+FHT exampleFHT4(6);
+FHT exampleFHT5(7);
+
+int size = 8;
+float * testArray;
+
+testArray = new float[size];
+for(int i = 0; i < size; i++) testArray[i] = (float)2;
+exampleFHT1.power2(testArray);
+QCOMPARE(testArray[0], (float)(512));
+delete [] testArray;
+size *= 2;
+
+testArray = new float[size];
+for(int i = 0; i < size; i++) testArray[i] = (float)2;
+exampleFHT2.power2(testArray);
+QCOMPARE(testArray[0], (float)(2048));
+delete [] testArray;
+size *= 2;
+
+testArray = new float[size];
+for(int i = 0; i < size; i++) testArray[i] = (float)2;
+exampleFHT3.power2(testArray);
+QCOMPARE(testArray[0], (float)(8192));
+delete [] testArray;
+size *= 2;
+
+testArray = new float[size];
+for(int i = 0; i < size; i++) testArray[i] = (float)2;
+exampleFHT4.power2(testArray);
+QCOMPARE(testArray[0], (float)(32768));
+delete [] testArray;
+size *= 2;
+
+testArray = new float[size];
+for(int i = 0; i < size; i++) testArray[i] = (float)2;
+exampleFHT5.power2(testArray);
+QCOMPARE(testArray[0], (float)(131072));
+delete [] testArray;
+size *= 2;
+}
+
 QTEST_APPLESS_MAIN(TestFHT);
 
 //#include "testfht.moc"
