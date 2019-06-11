@@ -652,7 +652,7 @@ int TidalRequest::ParseSong(Song &song, const int album_id_requested, const QJso
   else {
     //qLog(Error) << "Tidal: Invalid duration for song.";
     //qLog(Debug) << json_duration;
-    error(QSTRING("Invalid duration for song"), json_duration)
+    Error(QString("Invalid duration for song"), json_duration);
     return -1;
   }
 
