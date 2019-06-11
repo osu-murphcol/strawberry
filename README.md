@@ -1,4 +1,4 @@
-:strawberry: Strawberry Music Player [![Build Status](https://travis-ci.org/osu-murphcol/strawberry.svg?branch=master)](https://travis-ci.org/osu-murphcol/strawberry)
+:strawberry: Strawberry Music Player [![Build Status](https://travis-ci.com/osu-murphcol/strawberry.svg?branch=master)](https://travis-ci.com/osu-murphcol/strawberry)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=FRJUYV5QP6HW8)
 =======================
 
