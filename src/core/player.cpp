@@ -267,7 +267,7 @@ void Player::HandleLoadResult(const UrlHandler::LoadResult &result) {
       qLog(Debug) << "URL handler for" << result.original_url_ << "said no more tracks";
 
       loading_async_ = QUrl();
-      NextItem(stream_change_type_);
+      PlayNextItem(stream_change_type_);
       break;
 
     case UrlHandler::LoadResult::TrackAvailable: {
@@ -332,11 +332,11 @@ void Player::NextInternal(Engine::TrackChangeFlags change) {
     }
   }
 
-  NextItem(change);
+  PlayNextItem(change);
 
 }
 
-void Player::NextItem(Engine::TrackChangeFlags change) {
+void Player::PlayNextItem(Engine::TrackChangeFlags change) {
 
   Playlist *active_playlist = app_->playlist_manager()->active();
 
@@ -772,7 +772,7 @@ void Player::InvalidSongRequested(const QUrl &url) {
     return;
   }
 
-  NextItem(Engine::Auto);
+  PlayNextItem(Engine::Auto);
 
 }
 

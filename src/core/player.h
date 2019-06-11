@@ -114,8 +114,7 @@ class PlayerInterface : public QObject {
   // Emitted when there's a manual change to the current's track position.
   void Seeked(qlonglong microseconds);
 
-  // Emitted when Player has processed a request to play another song.
-  // This contains the URL of the song and a flag saying whether it was able to play the song.
+
   void SongChangeRequestProcessed(const QUrl &url, bool valid);
 
   // The toggle parameter is true when user requests to toggle visibility for Pretty OSD
@@ -196,8 +195,8 @@ class Player : public PlayerInterface {
   void EngineMetadataReceived(const Engine::SimpleMetaBundle &bundle);
   void TrackAboutToEnd();
   void TrackEnded();
-  // Play the next item on the playlist - disregarding radio stations like last.fm that might have more tracks.
-  void NextItem(Engine::TrackChangeFlags change);
+
+  void PlayNextItem(Engine::TrackChangeFlags change);
   void PreviousItem(Engine::TrackChangeFlags change);
 
   void NextInternal(Engine::TrackChangeFlags);
