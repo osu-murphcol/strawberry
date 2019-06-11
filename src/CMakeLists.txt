@@ -576,7 +576,7 @@ optional_source(HAVE_GSTREAMER
 
 # Xine
 optional_source(HAVE_XINE
-  SOURCES engine/xineengine.cpp engine/xinescope.c
+  SOURCES engine/xineengine.cpp
   HEADERS engine/xineengine.h
 )
 optional_source(XINE_ANALYZER
@@ -893,6 +893,7 @@ optional_source(HAVE_TIDAL
     tidal/tidalbaserequest.cpp
     tidal/tidalrequest.cpp
     tidal/tidalstreamurlrequest.cpp
+    tidal/tidalfavoriterequest.cpp
     settings/tidalsettingspage.cpp
     covermanager/tidalcoverprovider.cpp
   HEADERS
@@ -901,6 +902,7 @@ optional_source(HAVE_TIDAL
     tidal/tidalbaserequest.h
     tidal/tidalrequest.h
     tidal/tidalstreamurlrequest.h
+    tidal/tidalfavoriterequest.h
     settings/tidalsettingspage.h
     covermanager/tidalcoverprovider.h
   UI
