@@ -529,18 +529,15 @@ int Playlist::next_row(bool ignore_repeat_track) const {
   if (next_virtual_index >= virtual_items_.count()) {
     // We've gone off the end of the playlist.
 
-    switch (playlist_sequence_->repeat_mode()) {
-      case PlaylistSequence::Repeat_Off:
-      case PlaylistSequence::Repeat_Intro:
-        return -1;
-      case PlaylistSequence::Repeat_Track:
+      if(   playlist_sequence_->repeat_mode() == PlaylistSequence::Repeat_Off
+         || playlist_sequence_->repeat_mode() == PlaylistSequence::Repeat_Intro
+      ) {
+          return -1;
+      } else if ( playlist_sequence_->repeat_mode() == PlaylistSequence::Repeat_Track ) {
         next_virtual_index = current_virtual_index_;
-        break;
-
-      default:
+      } else {
         next_virtual_index = NextVirtualIndex(-1, ignore_repeat_track);
-        break;
-    }
+      }
   }
 
   // Still off the end?  Then just give up
